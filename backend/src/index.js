@@ -6,6 +6,9 @@ import { connectDB } from "./lib/db.js";
 dotenv.config()
 const app = express()
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use("/api/auth", authRoutes)
 
 const PORT = process.env.PORT
